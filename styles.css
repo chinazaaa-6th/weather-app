@@ -9,6 +9,7 @@ body {
   max-width: 700px;
   color: rgba(14, 9, 9, 0.978);
   background: rgba(129, 60, 60, 0.4);
+  border: 2px solid rgb(2, 2, 61);
   border-radius: 20px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(3, 2, 2, 0.26);
