@@ -1,4 +1,5 @@
 function showTemp(response) {
+  console.log(response);
   document.querySelector("#location").innerHTML = response.data.city;
   document.querySelector("#digit").innerHTML = Math.round(
     response.data.temperature.current
