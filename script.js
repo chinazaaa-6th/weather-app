@@ -1,5 +1,4 @@
 function showTemp(response) {
-  console.log(response);
   document.querySelector("#location").innerHTML = response.data.city;
   document.querySelector("#digit").innerHTML = Math.round(
     response.data.temperature.current
@@ -11,7 +10,9 @@ function showTemp(response) {
   );
   document.querySelector("#desc").innerHTML =
     response.data.condition.description;
-  document.querySelector("#icon").innerHTML = response.data.condition.icon_url;
+  document.querySelector(
+    "#icon"
+  ).innerHTML = `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`;
 }
 
 function getCity(cityy) {
