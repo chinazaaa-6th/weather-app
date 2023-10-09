@@ -16,6 +16,7 @@ function showTemp(response) {
       "src",
       `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
     );
+  celTemp = response.data.temperature.current;
 }
 
 function getCity(cityy) {
@@ -40,6 +41,21 @@ function getCurrent(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(findLocation);
 }
+function getFarTemp(event) {
+  event.preventDefault();
+  let faTemp = (celTemp * 9) / 5 + 32;
+  let number = document.querySelector("#digit");
+  number.innerHTML = Math.round(faTemp);
+}
+
+function getCelTemp(event) {
+  event.preventDefault();
+  let number = document.querySelector("#digit");
+  number.innerHTML = Math.round(celTemp);
+}
+
+let celTemp = null;
+
 let searchForm = document.querySelector("#part");
 searchForm.addEventListener("submit", search);
 
@@ -47,3 +63,9 @@ let locationBtn = document.querySelector("#current-button");
 locationBtn.addEventListener("click", getCurrent);
 
 getCity("Nigeria");
+
+let farLink = document.querySelector("#far");
+farLink.addEventListener("click", getFarTemp);
+
+let celLink = document.querySelector("#cel");
+celLink.addEventListener("click", getCelTemp);
