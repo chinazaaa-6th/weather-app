@@ -23,10 +23,30 @@
     <div class="container">
       <div class="thing">
         <div class="row row-cols-auto" id="group">
-          <div class="col"><a href="https://api.shecodes.io/weather/v1/current?query={Melbourne}&key={32fob4398470td4a73fb1e1ffb79ad6a}">Melbourne</a></div>
-          <div class="col"><a href="https://api.shecodes.io/weather/v1/current?query={Lagos}&key={32fob4398470td4a73fb1e1ffb79ad6a}">Lagos</a></div>
-          <div class="col"><a href="https://api.shecodes.io/weather/v1/current?query={Athens}&key={32fob4398470td4a73fb1e1ffb79ad6a}">Athens</a></div>
-          <div class="col"><a href="https://api.shecodes.io/weather/v1/current?query={Mexicali}&key={32fob4398470td4a73fb1e1ffb79ad6a}">Mexicali</a></div>
+          <div class="col">
+            <a
+              href="https://api.shecodes.io/weather/v1/current?query={Melbourne}&key={32fob4398470td4a73fb1e1ffb79ad6a}"
+              >Melbourne</a
+            >
+          </div>
+          <div class="col">
+            <a
+              href="https://api.shecodes.io/weather/v1/current?query={Lagos}&key={32fob4398470td4a73fb1e1ffb79ad6a}"
+              >Lagos</a
+            >
+          </div>
+          <div class="col">
+            <a
+              href="https://api.shecodes.io/weather/v1/current?query={Athens}&key={32fob4398470td4a73fb1e1ffb79ad6a}"
+              >Athens</a
+            >
+          </div>
+          <div class="col">
+            <a
+              href="https://api.shecodes.io/weather/v1/current?query={Mexicali}&key={32fob4398470td4a73fb1e1ffb79ad6a}"
+              >Mexicali</a
+            >
+          </div>
         </div>
       </div>
       <form id="part">
@@ -49,18 +69,19 @@
       </form>
       <button id="current-button">Current</button>
       <div class="header">
-        <h1 id="tempi">
-          <span id="digit"></span>°<a href="">C</a>|<a href="">F</a>
-        </h1>
-        <h3 id="location"></h3>
-        <h4 id="date">Today</h4>
-        <h5 id="desc">
+        <h1>
           <img
             src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-night.png"
             alt="clear-sky"
             id="icon"
           />
-        </h5>
+        </h1>
+        <h2 id="tempi">
+          <span id="digit"></span>°<a href="">C</a>|<a href="">F</a>
+        </h2>
+        <h3 id="location"></h3>
+        <h4 id="date">Today</h4>
+        <h5 id="desc"></h5>
       </div>
       <p>Humidity:<span id="humid"></span> | Wind:<span id="wind"></span></p>
       <div class="row row-cols-auto" id="future">

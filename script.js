@@ -12,7 +12,7 @@ function showTemp(response) {
     response.data.condition.description;
   document.querySelector(
     "#icon"
-  ).innerHTML = `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`;
+  ).innerHTML = `http://shecodes-assets.s3.amazonaws.com/api/weather/icon/${response.data.condition.icon}.png`;
 }
 
 function getCity(cityy) {
