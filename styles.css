@@ -68,11 +68,15 @@ a:hover {
   color: black;
 }
 #future {
-  margin: 20px;
-  padding: 20px 40px;
+  padding: 5px 30px;
   font-size: 16px;
+  transition: all 200ms ease-in-out;
+  border-radius: 20%;
   text-align: center;
-  border-radius: 16px;
+  opacity: 0.8;
+}
+#future:hover {
+  cursor: pointer;
 }
 #icon {
   display: block;
