@@ -64,24 +64,46 @@ function formatDate(now) {
   let fullDate = `${day}, ${month} ${datee}, ${year}`;
   return `${day}, ${month} ${datee}, ${year}`;
 }
+
+function formateDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 function showForecast(response) {
-  console.log(response.data.daily);
+  let future = response.data.daily;
   let futureElement = document.querySelector("#future");
   let futureHTML = `<div class="row">`;
-  let dayss = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tues", "Wed"];
-  dayss.forEach(function (dayy) {
+  future.forEach(function (futureDay, index) {
     futureHTML =
       futureHTML +
-      `
-        <div class="col">
-          <div class="forcast-date">${dayy}</div>
-          <div class="forecast-icon">☀</div>
-          <span class="forcast-temp">28°C</span>
+      `<div class="col">
+          <div class="forcast-date">${formateDay(
+            futureDay.temperature.day
+          )}</div>
+          <div>
+           <img
+            src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+              futureDay.condition.icon
+            }.png"
+            alt="clear-sky"
+            width="30"
+          />
+          </div>
+          <div class="forcast-temp-max">${Math.round(
+            futureDay.temperature.maximum
+          )}°C</div>
+          <div class="forcast-temp-min">${Math.round(
+            futureDay.temperature.minimum
+          )}°C</div>
         </div>`;
   });
   futureElement.innerHTML = futureHTML;
   futureHTML = `</div>`;
 }
+
 function getForecast(coordinates) {
   let key = "32fob4398470td4a73fb1e1ffb79ad6a";
   let url = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${key}&units=metric`;
