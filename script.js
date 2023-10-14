@@ -204,7 +204,7 @@ searchForm.addEventListener("submit", search);
 let locationBtn = document.querySelector("#current-button");
 locationBtn.addEventListener("click", getCurrent);
 
-getCity("Nigeria");
+getCity("Abuja");
 
 let farLink = document.querySelector("#far");
 farLink.addEventListener("click", getFarTemp);
