@@ -64,14 +64,10 @@ a:hover {
   text-decoration: wavy;
   color: #457a8f;
 }
-p {
-  margin: 10px;
-}
 .thing {
   color: black;
 }
 #future {
-  margin: 10px;
   padding: 5px 30px;
   font-size: 16px;
   transition: all 200ms ease-in-out;
