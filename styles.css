@@ -64,6 +64,9 @@ a:hover {
   text-decoration: wavy;
   color: #457a8f;
 }
+p {
+  margin: 10px;
+}
 .thing {
   color: black;
 }
