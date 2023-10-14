@@ -77,12 +77,11 @@ function showForecast(response) {
   let futureElement = document.querySelector("#future");
   let futureHTML = `<div class="row">`;
   future.forEach(function (futureDay, index) {
-    futureHTML =
-      futureHTML +
-      `<div class="col">
-          <div class="forcast-date">${formateDay(
-            futureDay.temperature.day
-          )}</div>
+    if (index < 6) {
+      futureHTML =
+        futureHTML +
+        `<div class="col">
+          <div class="forcast-date">${formateDay(futureDay.time)}</div>
           <div>
            <img
             src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
@@ -99,7 +98,9 @@ function showForecast(response) {
             futureDay.temperature.minimum
           )}°C</div>
         </div>`;
+    }
   });
+
   futureElement.innerHTML = futureHTML;
   futureHTML = `</div>`;
 }
