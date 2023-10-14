@@ -81,7 +81,7 @@ function showForecast(response) {
       futureHTML =
         futureHTML +
         `<div class="col">
-          <div class="forcast-date">${formateDay(futureDay.time)}</div>
+          <div class="forecast-date">${formateDay(futureDay.time)}</div>
           <div>
            <img
             src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
@@ -91,10 +91,10 @@ function showForecast(response) {
             width="30"
           />
           </div>
-          <div class="forcast-temp-max">${Math.round(
+          <div class="forecast-temp-max">${Math.round(
             futureDay.temperature.maximum
           )}°C</div>
-          <div class="forcast-temp-min">${Math.round(
+          <div class="forecast-temp-min">${Math.round(
             futureDay.temperature.minimum
           )}°C</div>
         </div>`;
@@ -143,6 +143,23 @@ function search(event) {
   let cityy = document.querySelector("#city-search").value;
   getCity(cityy);
 }
+
+function displayIt(citty) {
+  let key = "32fob4398470td4a73fb1e1ffb79ad6a";
+  let url = `https://api.shecodes.io/weather/v1/current?query=${citty}&key=${key}&units=metric`;
+  axios.get(url).then(showTemp);
+}
+
+function showFrequent(event) {
+  event.preventDefault();
+  let citty = document.querySelector("#city-search").value;
+  let free = document.querySelector("#group");
+  free = citty;
+  displayIt(citty);
+}
+
+let freeCity = document.querySelector("#group");
+freeCity.addEventListener("click", showFrequent);
 
 function findLocation(position) {
   let key = "32fob4398470td4a73fb1e1ffb79ad6a";
