@@ -71,6 +71,7 @@ p {
   color: black;
 }
 #future {
+  margin: 10px;
   padding: 5px 30px;
   font-size: 16px;
   transition: all 200ms ease-in-out;
